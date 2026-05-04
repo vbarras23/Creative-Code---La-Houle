@@ -21,10 +21,28 @@ function draw() {
   for (let i = 0; i < particules.length; i++) {
     let p = particules[i];
 
+    // Calcul de l'angle avec bruit Perlin
     let angle = noise(p.x * 0.005, p.y * 0.005, frameCount * 0.003) * TWO_PI;
 
     let vx = cos(angle) * p.speed + 0.8;
     let vy = sin(angle) * p.speed * 0.5;
+
+    // Interaction avec la souris
+    if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+      let dx = mouseX - p.x;
+      let dy = mouseY - p.y;
+      let distance = sqrt(dx * dx + dy * dy);
+      
+      // Rayon d'influence de la souris
+      let influence = 150;
+      
+      if (distance < influence) {
+        // Force d'attraction inversement proportionnelle à la distance
+        let force = map(distance, 0, influence, 1.5, 0);
+        vx += (dx / distance) * force;
+        vy += (dy / distance) * force;
+      }
+    }
 
     fill(120, 130, 140, 80);
     ellipse(p.x, p.y, p.size, p.size);
