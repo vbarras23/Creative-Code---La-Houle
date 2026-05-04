@@ -1,7 +1,8 @@
 let particles = [];
 
 function setup() {
-  createCanvas(500, 500);
+  let canvas = createCanvas(500, 500);
+  canvas.parent(document.querySelector(".canvas-container"));
   stroke(180, 210, 255, 120);
   strokeWeight(1.5);
 

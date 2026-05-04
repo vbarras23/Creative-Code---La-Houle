@@ -1,0 +1,40 @@
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #ffffff;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.canvas-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+.description {
+  flex: 1;
+  padding-left: 2rem;
+  max-width: 400px;
+}
+
+.description h2 {
+  margin-top: 0;
+  color: rgb(62, 116, 224);
+}

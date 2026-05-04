@@ -1,7 +1,8 @@
 let particules = [];
 
 function setup() {
-  createCanvas(500, 500);
+  let canvas = createCanvas(500, 500);
+  canvas.parent(document.querySelector(".canvas-container"));
   noStroke();
 
   for (let i = 0; i < 220; i++) {

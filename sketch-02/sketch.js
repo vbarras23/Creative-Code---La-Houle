@@ -3,7 +3,8 @@ let vent = false;
 let ventForce = 0;
 
 function setup() {
-  createCanvas(500, 500);
+  let canvas = createCanvas(500, 500);
+  canvas.parent(document.querySelector('.canvas-container'));
   noStroke();
 
   for (let i = 0; i < 200; i++) {
@@ -24,6 +25,7 @@ function draw() {
 
   if (frameCount > 25) {
     vent = true;
+  }
 
   if (vent && ventForce < 3) {
     ventForce += 0.01;

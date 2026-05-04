@@ -2,7 +2,8 @@ let grid = [];
 let cellSize = 25;
 
 function setup() {
-  createCanvas(500, 500);
+  let canvas = createCanvas(500, 500);
+  canvas.parent(document.querySelector(".canvas-container"));
   noStroke();
 
   for (let x = 0; x < width / cellSize; x++) {

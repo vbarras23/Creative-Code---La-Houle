@@ -6,7 +6,8 @@ let h = 1000;
 let flying = 0;
 
 function setup() {
-  createCanvas(800, 600);
+  let canvas = createCanvas(500, 500);
+  canvas.parent(document.querySelector(".canvas-container"));
   cols = w / scl;
   rows = h / scl;
   noStroke();
